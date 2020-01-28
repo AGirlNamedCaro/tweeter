@@ -1,0 +1,41 @@
+
+textarea {
+  border: hidden;
+  background-color: #F4F1EC;
+  width: 100%;
+  margin-top: 70px;
+ 
+}
+
+input {
+  font-family: 'Bungee', cursive;
+  color: white;
+  background-color: #3F56A1;
+  width: 8%;
+  height: 40px;
+  margin-top: 20px;
+
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+  text-align: right;
+}
+
+:focus {
+  outline: none;
+}
+
+hr {
+  height: 2px;
+  background-color: black;
+}
+
+.formElements {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+

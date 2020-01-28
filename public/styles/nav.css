@@ -1,0 +1,28 @@
+/* Here we are first removing all extra margin and padding so that the header
+doesn't have a space with the top of the page*/
+* {
+  margin: 0px;
+   padding: 0px;
+}
+
+nav {
+  position: fixed;
+  height: 120px;
+  z-index: 1;
+  background-color:  #4056A1;
+  width: 100%;
+  color: white;
+}
+
+.navElements {
+  display: flex;
+  margin: 1.5em;
+  justify-content: space-between;
+
+  
+}
+
+#brand {
+  font-family: 'Bungee', cursive;
+  font-size: 32px;
+}
