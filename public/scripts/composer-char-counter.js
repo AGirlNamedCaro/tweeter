@@ -10,6 +10,9 @@ $(document).ready(function() {
     if($(this).val().length > maxLength) {
       $('.counter').text(currentChars).css('color','red');
     }
+    else {
+      $('.counter').text(currentChars).css('color','black');
+    }
 
   })
   
