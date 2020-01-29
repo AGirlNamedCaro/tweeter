@@ -24,26 +24,21 @@ for(const tweet of tweets) {
 //that contains the entire HTML structure of the tweet
 const createTweetElement = (tweet) => {
 
-const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-const firstDate = new Date(tweet.created_at);
-const secondDate = new Date();
-
-const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
  let $tweet = $(`<article class='prevTweets'>
           <header id='prev-tweets-header'>  
             <div class='leftElementsContainer'>
-              <img class='profileImg' src=${tweet.user.avatars}>
-              <p class='nameTweet'>${tweet.user.name}</p>
+              <img class='profileImg' src=${escape(tweet.user.avatars)}>
+              <p class='nameTweet'>${escape(tweet.user.name)}</p>
 
             </div>
 
-              <h4>${tweet.user.handle}</h4>
+              <h4>${escape(tweet.user.handle)}</h4>
           </header>
           <div class='tweetBody'>
-            <p>${tweet.content.text}</p>
+            <p>${escape(tweet.content.text)}</p>
           </div>
           <footer>
-            <p id='timeLength'>${diffDays} days ago</p>
+            <p id='timeLength'>${escape(date(tweet.created_at))} days ago</p>
             <div class='icons'>
               <i class="fa fa-flag"></i>
               <i class="fa fa-retweet"></i>
