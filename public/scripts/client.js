@@ -61,21 +61,21 @@ return $tweet;
 // This prevents the default action of reloading the page by the form submission
 $('form').submit(function(event) {
   event.preventDefault();
+  const serializedData =  $(this).serialize();
   
-  if (dataLength === 0) {
-    alert('Please enter a tweet');
-  } else if (dataLength <= 140) {
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: $(this).serialize(),
-    }).then(function(msg) {
-      alert("Data saved: " + msg)
-    })
-  } else {
-    alert('Please keep your tweet to below 140 characters')
+//Here we are checking form validation
+  if($(this) === 'text=') {
+    alert('Your tweet is empty');
+
   }
-  
+     else if (serializedData.length <= 140) {
+
+      $.ajax('/tweets', {method: 'POST', data: `${serializedData}`})
+      loadTweets();
+      
+    } else {
+      alert('Please keep your tweet to below 140 characters')
+    }
   
   })
   

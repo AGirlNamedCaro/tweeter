@@ -17,6 +17,7 @@ $(document).ready(function() {
     
     else {
       $('.counter').text(currentChars).css('color','black');
+      
     }
 
   })
