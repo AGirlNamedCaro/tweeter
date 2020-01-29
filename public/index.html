@@ -62,6 +62,13 @@
     <main class="container">
 
       <section class="new-tweet">
+        <!-- This is an error message that will be displayed when the user goes over
+        the character limits or submits without inputting anything-->
+
+        <section class='validationError'>
+          <h3 id="above140">Please keep your tweet to below 140 characters</h3>
+          <h3 id="noChars">You can't submit a blank tweet.</h3>
+        </section>
        
         <form action='/tweets' method='POST'>
           <textarea name="text"  placeholder="What are you humming about?" ></textarea>

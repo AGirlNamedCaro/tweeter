@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('.counter').text(currentChars);
     if($(this).val().length > maxLength) {
       $('.counter').text(currentChars).css('color','red');
-      alert('This message exceeds the maximum length allowed');
+      
       
     }
     

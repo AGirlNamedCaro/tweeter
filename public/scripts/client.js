@@ -59,22 +59,28 @@ $('form').submit(function(event) {
   const serializedData =  $(this).serialize();
   
 //Here we are checking form validation
-  if($(this) === 'text=') {
-    alert('Your tweet is empty');
+  if(String($(this).find('textarea').val()).length === 0) {
+
+    $('#noChars').slideToggle();
 
   }
-     else if (serializedData.length <= 140) {
+     else if (String($(this).find('textarea').val()).length <= 140) {
 
       $.ajax('/tweets', {method: 'POST', data: `${serializedData}`})
       .then(function() {
         loadTweets();
       })
       
-    } else {
-      alert('Please keep your tweet to below 140 characters')
+    } 
+    else {
+        $('#above140').slideToggle();
+
+      };
+      
+      
     }
   
-  })
+  )
   
   
   //This function is responsible for fetching tweets from the localhost/tweets page

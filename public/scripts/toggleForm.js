@@ -2,8 +2,9 @@
 $(document).ready(function (){
 
 $('#toggleForm').click(function(){
-  $('.new-tweet').toggle();
+  $('.new-tweet').slideToggle();
   $('textarea').focus();
 });
 
 });
+

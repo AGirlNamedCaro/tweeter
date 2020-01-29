@@ -112,5 +112,25 @@ h4 {
   margin-top: 0.5em;
  }
 
- 
+ .validationError {
+   text-align: center;
+   color: #A30000;
+   
+   font-size: 1em;
+   width: 40%;
+   margin: 1em auto;
+  
+ }
+
+ #above140 {
+  border: solid;
+   display: none;
+ }
+
+ #noChars {
+  border: solid;
+  display: none;
+}
+
+
 
