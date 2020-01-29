@@ -36,6 +36,10 @@ hr {
   justify-content: space-between;
 }
 
+.new-tweet {
+  display: none;
+}
+
 
 
 
