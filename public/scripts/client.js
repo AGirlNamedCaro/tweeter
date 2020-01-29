@@ -71,7 +71,9 @@ $('form').submit(function(event) {
      else if (serializedData.length <= 140) {
 
       $.ajax('/tweets', {method: 'POST', data: `${serializedData}`})
-      loadTweets();
+      .then(function() {
+        loadTweets();
+      })
       
     } else {
       alert('Please keep your tweet to below 140 characters')
