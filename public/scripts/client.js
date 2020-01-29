@@ -8,44 +8,21 @@ $(document).ready(function (){
  */
 
 // Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
 
-const renderTweets = function(tweets) {
+
+const renderTweets = (tweets) => {
 // loops through tweets
 // calls createTweetElement for each tweet
 
 for(const tweet of tweets) {
-  $('.container').append(createTweetElement(tweet)); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  $('.tweetContainer').prepend(createTweetElement(tweet)); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 }
 // takes return value and appends it to the tweets container
 }
 
 //This loop takes in an object and is responsible for returning a tweet article
 //that contains the entire HTML structure of the tweet
-const createTweetElement = function(tweet) {
+const createTweetElement = (tweet) => {
 
 const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 const firstDate = new Date(tweet.created_at);
@@ -79,20 +56,43 @@ const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
 return $tweet;
 }
 
-renderTweets(data);
 
 
 // This prevents the default action of reloading the page by the form submission
 $('form').submit(function(event) {
   event.preventDefault();
-  console.log('preventing default behaviour');
-  const serializedData =  $(this).serialize();
-  console.log('serialized data', serializedData);
-  $.ajax('/tweets', {method: 'POST', data: serializedData})
-    .then(function(serializedData) {
-      console.log('Success: ', serializedData);
-      
+  
+  if (dataLength === 0) {
+    alert('Please enter a tweet');
+  } else if (dataLength <= 140) {
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: $(this).serialize(),
+    }).then(function(msg) {
+      alert("Data saved: " + msg)
     })
-})
+  } else {
+    alert('Please keep your tweet to below 140 characters')
+  }
+  
+  
+  })
+  
+  
+  //This function is responsible for fetching tweets from the localhost/tweets page
+  const loadTweets = () => {
+    $.ajax('/tweets', {method: 'GET'})
+    .then(function(data){
+      console.log('fetched data: ', data);
+      renderTweets(data);
+    }) 
+    
+}
+
+
+loadTweets();
+
+
 
 });
