@@ -2,8 +2,7 @@ $(document).ready(function() {
   $('h5').hide();
   $('.prevTweets').mouseover(function() {
     $(this).css('box-shadow', '12px 12px 2px 1px rgba(0, 0, 255, .2)');
-    $(this).css('opacity','2');
-    $('.prevTweets').css('opacity','1');
+    $(this).css('opacity','1');
     $('h4').show();
     $('h4').css('font-weight','bold');
   })
