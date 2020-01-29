@@ -1,7 +1,8 @@
-//This ensures that the DOM has loaded
+//This file grabs the character count from the textarea input and 
+//displays the available characters left back in the html file.
 
 $(document).ready(function() {
-  // let counter = 0;
+  
   const maxLength = 140;
 
   $('textarea').keyup(function() {
