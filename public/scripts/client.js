@@ -87,7 +87,6 @@ $('form').submit(function(event) {
     
 }
 
-
 loadTweets();
 
 

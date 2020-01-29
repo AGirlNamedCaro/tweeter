@@ -18,8 +18,6 @@ nav {
   display: flex;
   margin: 1.5em;
   justify-content: space-between;
-
-  
 }
 
 #brand {
@@ -28,6 +26,10 @@ nav {
 }
 
 .navElementsRight {
-  display: block;
-
+  display:flex;
+  flex-direction: column;
 }
+.fa {
+  margin-left: 3em;
+}
+
