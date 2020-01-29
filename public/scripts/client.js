@@ -38,7 +38,6 @@ const renderTweets = function(tweets) {
 // calls createTweetElement for each tweet
 
 for(const tweet of tweets) {
-  console.log(createTweetElement(tweet));
   $('.container').append(createTweetElement(tweet)); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 }
 // takes return value and appends it to the tweets container
@@ -83,5 +82,17 @@ return $tweet;
 renderTweets(data);
 
 
+// This prevents the default action of reloading the page by the form submission
+$('form').submit(function(event) {
+  event.preventDefault();
+  console.log('preventing default behaviour');
+  const serializedData =  $(this).serialize();
+  console.log('serialized data', serializedData);
+  $.ajax('/tweets', {method: 'POST', data: serializedData})
+    .then(function(serializedData) {
+      console.log('Success: ', serializedData);
+      
+    })
+})
 
 });
