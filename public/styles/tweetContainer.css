@@ -1,0 +1,80 @@
+/*this file contains all the styles for the old tweet containers, excluding animation*/
+
+/* Main tweet container */
+.prevTweets {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2.5em;
+  opacity: 0.5;
+  
+}
+
+/* article section that holds the tweets */
+article {
+  margin-bottom: 1em;
+   border: solid;
+   text-align: center;
+ }
+
+ #prev-tweets-header {
+  display: flex;
+  justify-content: space-between;
+  background-color:  #f4f1ec;
+  height: 170px;
+  width: 100%;
+  background-image: none;
+}
+
+.nameTweet {
+  margin-top: 2em;
+}
+
+.profileImg {
+  
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  margin-top: 1.5em;
+  height: 50px;
+  
+  
+}
+
+.handle {
+  font-weight: normal;
+  color: #D7D4E3;
+  margin-right: 1.0em;
+  margin-top: 2em;
+  display: none;
+ }
+
+ 
+ .leftElementsContainer {
+   display: flex;
+   
+ }
+
+ .tweetBody {
+   display: flex;
+   margin: 1.5em;
+ }
+
+ footer {
+  border-top: solid;
+  height: 60px;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  
+   
+ }
+
+ .icons {
+   color: #4154A1;
+   margin-top: 0.5em;
+ }
+
+ #timeLength {
+  margin-top: 0.5em;
+ }

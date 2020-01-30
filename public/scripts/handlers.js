@@ -12,8 +12,8 @@ const postTweets = () => {
     $('#noChars').slideToggle();
 
   }
+  
      else if (String($(this).find('textarea').val()).length <= 140) {
-
       $.ajax('/tweets', {method: 'POST', data: `${serializedData}`})
       .then(function() {
         loadTweets();
@@ -21,7 +21,7 @@ const postTweets = () => {
       
     } 
     else {
-      
+
         $('#above140').slideToggle();
 
       };

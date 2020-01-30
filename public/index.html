@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -14,7 +15,9 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/newTweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweetContainer.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/validationError.css" type="text/css" />
     <link rel="stylesheet" href="/styles/animation.css" type="text/css" />
 
 
@@ -36,7 +39,9 @@
 
   </head>
 
-  <body>
+
+  
+  <body class='siteContainer'>
     <!-- Top nav bar (fixed) -->
   
     <nav>
@@ -51,24 +56,26 @@
     </nav>
 
     <header>
-      <div>
-          <img id='avatar' src="/images/profile-hex.png"> 
+      <div class='headerElements'>
+
+        <img src="/images/profile-hex.png"> 
+    
+    <br>
+    
+        <h2 id='username'><b>Carolina</b> Contreras</h2>
       </div>
-      <br>
-      <div>
-          <h2 id='username'><b>Your</b> Name</h2>
-      </div>
+      
   </header>
   
 
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+     <main class="container">
 
-      <section class="new-tweet">
+      <section class="new-tweet"> 
+
         <!-- This is an error message that will be displayed when the user goes over
         the character limits or submits without inputting anything-->
-
         <section class='validationError'>
           <h3 id="above140">Please limit input to 140 chars.</h3>
           <h3 id="noChars">You can't submit a blank tweet.</h3>
@@ -83,6 +90,7 @@
           </div>
         </form>
       </section>
+
       <section class='tweetContainer'>
 
       </section>

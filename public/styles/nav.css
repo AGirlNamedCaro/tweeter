@@ -6,7 +6,7 @@ doesn't have a space with the top of the page*/
 }
 
 nav {
-  position: fixed;
+  position:sticky;
   height: 120px;
   z-index: 1;
   background-color:  #4056A1;

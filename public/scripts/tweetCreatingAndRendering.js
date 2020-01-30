@@ -25,7 +25,7 @@ const renderTweets = (tweets) => {
    
                </div>
    
-                 <h4>${escape(tweet.user.handle)}</h4>
+                 <h4 class='handle'>${escape(tweet.user.handle)}</h4>
              </header>
              <div class='tweetBody'>
                <p>${escape(tweet.content.text)}</p>
