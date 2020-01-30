@@ -6,18 +6,18 @@ const renderTweets = (tweets) => {
   const $tweetContainer = $('.tweetContainer');
   $tweetContainer.empty();
   
-  for(const tweet of tweets) {
+  for (const tweet of tweets) {
     $tweetContainer.prepend(createTweetElement(tweet)); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
   }
   // takes return value and appends it to the tweets container
-  }
+};
 
 
-  ////THIS FUNCTION CREATES A MARKUP TEMPLATE FOR THE TWEET OBJECT/////////
+////THIS FUNCTION CREATES A MARKUP TEMPLATE FOR THE TWEET OBJECT/////////
 
-  const createTweetElement = (tweet) => {
+const createTweetElement = (tweet) => {
 
-    let $tweet = $(`<article class='prevTweets'>
+  let $tweet = $(`<article class='prevTweets'>
              <header id='prev-tweets-header'>  
                <div class='leftElementsContainer'>
                  <img class='profileImg' src=${escape(tweet.user.avatars)}>
@@ -41,6 +41,6 @@ const renderTweets = (tweets) => {
            </article>
     `).addClass('tweet');
     
-   return $tweet;
-   }
+  return $tweet;
+};
    

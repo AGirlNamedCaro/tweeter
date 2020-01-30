@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="/styles/tweetContainer.css" type="text/css" />
     <link rel="stylesheet" href="/styles/validationError.css" type="text/css" />
     <link rel="stylesheet" href="/styles/animation.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/mediaQueries.css" type="text/css" />
+
 
 
 
@@ -54,11 +56,11 @@
         </div>
       </div >
     </nav>
-
+<div class='headerAndMainContainer'>
     <header>
       <div class='headerElements'>
 
-        <img src="/images/profile-hex.png"> 
+        <img  src="/images/profile-hex.png"> 
     
     <br>
     
@@ -80,7 +82,7 @@
           <h3 id="above140">Please limit input to 140 chars.</h3>
           <h3 id="noChars">You can't submit a blank tweet.</h3>
         </section>
-       
+       <!-- Form where user can type tweets -->
         <form action='/tweets' method='POST'>
           <textarea name="text"  placeholder="What are you humming about?" ></textarea>
           <hr>
@@ -90,10 +92,12 @@
           </div>
         </form>
       </section>
-
+<!-- Holds tweets that come from the database -->
       <section class='tweetContainer'>
 
       </section>
+
     </main>
+  </div>
   </body>
 </html>

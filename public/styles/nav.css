@@ -9,7 +9,8 @@ nav {
   position:sticky;
   height: 120px;
   z-index: 1;
-  background-color:  #4056A1;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+  background-color:  #d99820;;
   width: 100%;
   color: white;
 }

@@ -1,10 +1,10 @@
 //This file uses JQuery in order to toggle the form
-$(document).ready(function (){
+$(document).ready(function() {
 
-$('#toggleForm').click(function(){
-  $('.new-tweet').slideToggle();
-  $('textarea').focus();
-});
+  $('#toggleForm').click(function() {
+    $('.new-tweet').slideToggle();
+    $('textarea').focus();
+  });
 
 });
 
